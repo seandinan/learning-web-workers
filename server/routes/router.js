@@ -8,6 +8,10 @@ router.get('/public/:folder/:name', (req, res) => {
 	res.sendFile(path.resolve(__dirname + '/../../public/' + req.params.folder + '/' + req.params.name));
 });
 
+router.get('/src/:folder/:name', (req, res) => {
+	res.sendFile(path.resolve(__dirname + '/../../src/' + req.params.folder + '/' + req.params.name));
+});
+
 router.get('*', (req, res) => {res.sendFile(path.resolve(htmlPath + '/index.html'))});
 
 module.exports = router;
